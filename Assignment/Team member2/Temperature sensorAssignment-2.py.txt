@@ -1,0 +1,10 @@
+def sensor_temp(v):
+    print(f"SENSOR READ: {v} Volt")
+    ADC = adc_raw_value(v)
+    if ADC is None:
+        print("Voltage is not within the sensor range")
+    else:
+        print("**********************\nAnalog to Digital Convertion\n**********************")
+        print(f"Analog: {v}\nDigital: {ADC}")
+        print("**********************")
+        print(f"Temprature is: {round(adc_to_c(ADC))}")
